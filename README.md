@@ -12,11 +12,11 @@ To install a stable release use:
 
 **yarn**
 
-    yarn addrnative-radio-buttons
+    yarn add rnative-radio-buttons
 
 **npm**
 
-    npm i react-native-counters --save
+    npm i rnative-radio-buttons --save
     
 ### Example
 
