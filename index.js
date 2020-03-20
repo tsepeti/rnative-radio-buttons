@@ -3,11 +3,19 @@ import { View, TouchableOpacity, StyleSheet } from 'react-native';
 import ScalableText from 'react-native-text';
 import PropTypes from 'prop-types';
 
+// Default Colors
+const TOUCH_COLOR = '#97a0b1';
+const ACTIVE_COLOR = '#016bd8';
+const ACTIVE_TEXT_COLOR = '#FFFFFF';
+const DISABLED_COLOR = '#EDEDED';
+const DISABLED_TEXT_COLOR = '#8a8ca3';
+
 class RadioButtons extends Component {
   render() {
     const {
       selected,
       options,
+      touchableStyle,
       activeStyle,
       disableStyle,
       activeTextStyle,
@@ -29,7 +37,7 @@ class RadioButtons extends Component {
           return (
             <TouchableOpacity
               key={i}
-              style={[Styles.touchable, touchStyle]}
+              style={[Styles.touchable, touchableStyle, touchStyle]}
               onPress={() => this.props.onPress(value)}
               disabled={disabled}
             >
@@ -49,6 +57,7 @@ RadioButtons.propTypes = {
   options: PropTypes.array,
 
   // Styles
+  touchableStyle: PropTypes.object,
   activeStyle: PropTypes.object,
   disableStyle: PropTypes.object,
   activeTextStyle: PropTypes.object,
@@ -60,21 +69,21 @@ RadioButtons.defaultProps = {
   options: [],
 
   activeStyle: {
-    backgroundColor: '#016bd8',
-    borderColor: '#016bd8'
+    backgroundColor: ACTIVE_COLOR,
+    borderColor: ACTIVE_COLOR
   },
 
   disableStyle: {
-    backgroundColor: '#EDEDED',
-    borderColor: '#EDEDED'
+    backgroundColor: DISABLED_COLOR,
+    borderColor: DISABLED_COLOR
   },
 
   activeTextStyle: {
-    color: '#FFF'
+    color: ACTIVE_TEXT_COLOR
   },
 
   disableTextStyle: {
-    color: '#8a8ca3'
+    color: DISABLED_TEXT_COLOR
   }
 };
 
@@ -85,7 +94,7 @@ const Styles = StyleSheet.create({
 
   touchable: {
     borderWidth: 1,
-    borderColor: '#97a0b1',
+    borderColor: TOUCH_COLOR,
     justifyContent: 'center',
     alignItems: 'center',
     paddingHorizontal: 15,
@@ -96,7 +105,7 @@ const Styles = StyleSheet.create({
   },
 
   touchableText: {
-    color: '#97a0b1'
+    color: TOUCH_COLOR
   }
 });
 
