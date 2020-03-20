@@ -1,6 +1,6 @@
 {
   "name": "rnative-radio-buttons",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Simple radio button component for React Native",
   "main": "index.js",
   "repository": "https://github.com/tsepeti/rnative-radio-buttons.git",
